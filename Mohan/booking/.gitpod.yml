@@ -1,0 +1,15 @@
+image: gitpod/workspace-mysql
+
+tasks:
+  - name: Init Spring Boot App
+    init: |
+      sdk install java 17.0.9-tem  # Use a specific Java version (LTS)
+      cd spring-boot-web-starter
+      mvn clean install -DskipTests
+    command: |
+      cd spring-boot-web-starter
+      mvn spring-boot:run
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
